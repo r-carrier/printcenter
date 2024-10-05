@@ -10,7 +10,7 @@ curl --request POST \
 --url http://localhost:8080/printCenter/schedulePrint \
 --header 'Content-Type: multipart/form-data' \
 --form 'files=./Enterprise Car Receipt.pdf' \
---form 'files=docker run -d -p 8080:8080 solu-print-center:latest/Online Return Center.pdf' \
+--form 'files=./Enterprise Car Receipt.pdf2' \
 --form color=true \
 --form 'notes=Some notes' \
 --form 'requestedBy=Robert Carrier' \
