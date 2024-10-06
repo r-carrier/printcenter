@@ -20,6 +20,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
+            // for local Angular UI requests, not sure if needed for Google Calendar
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:4200") // Adjust as needed
