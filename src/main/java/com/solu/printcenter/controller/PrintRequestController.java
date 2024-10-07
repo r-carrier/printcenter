@@ -42,8 +42,8 @@ public class PrintRequestController {
             // File size validation defined in application.properties file
             // Could also validate file type here
             String fileName = file.getOriginalFilename();
-            if (fileName == null || fileName.contains("..")) {
-                return ResponseEntity.badRequest().body("Invalid file name: {}");
+            if (fileName == null || fileName.contains("..") || !fileName.contains(".")) {
+                return ResponseEntity.badRequest().body("Invalid file name: " + fileName);
             }
 
             // Create a new instance of PrintRequest for each file
@@ -60,7 +60,7 @@ public class PrintRequestController {
             try {
                 printRequestService.schedulePrint(printRequest);
             } catch (Exception e) {
-                return ResponseEntity.badRequest().body("Failed to schedule print: {}");
+                return ResponseEntity.badRequest().body("Failed to schedule print: " + e.getMessage());
             }
             // If we need to keep the file, save in S3
             // In a real-world scenario, we could return the ARN into a string and save it in the database
