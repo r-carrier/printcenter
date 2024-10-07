@@ -1,4 +1,4 @@
-Use Maven (and the Dockerfile) to build this project. The Dockerfile is located in the root directory of the project. To build the project, you can run the following command:
+Use Maven (and the Dockerfile) to build this project. The Dockerfile is located in the root directory of the project. To build the project in Docker, you can run the following command:
 
 docker build . -t solu-print-center:latest
 
